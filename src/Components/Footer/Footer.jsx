@@ -1,0 +1,140 @@
+import React from "react";
+import {
+  Facebook,
+  Instagram,
+  Youtube,
+  Linkedin,
+  Github,
+  X,
+} from "lucide-react";
+
+// Helper component for social icons (kept outside the main component for cleanliness)
+const IconButton = ({ icon, href }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="p-2 bg-white/10 rounded-xl hover:bg-white/20 transition flex items-center justify-center"
+  >
+    {icon}
+  </a>
+);
+
+const Footer = () => {
+  // We use max-w-[1220px] and darkBg for consistency with previous components
+  return (
+    <footer className="bg-neutral dark:bg-darkBg text-white px-6 py-14 mt-20">
+      <div className="max-w-[1220px] mx-auto">
+        {/* Grid responsive layout */}
+        {/* Removed redundant max-w-1220px from inner div */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* BRAND */}
+          <div>
+            <h2 className="text-2xl font-bold mb-4 text-primary">TravelEase</h2>
+            <p className="text-gray-300 leading-relaxed">
+              Your trusted travel partner—helping you explore the world with
+              ease, comfort, and style.
+            </p>
+          </div>
+
+          {/* QUICK LINKS */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-white">
+              Quick Links
+            </h3>
+            <ul className="space-y-3 text-gray-300">
+              {/* Added hrefs for scrolling to sections (ID on Home page) */}
+              <li>
+                <a href="#hero" className="hover:text-primary transition">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#features" className="hover:text-primary transition">
+                  Why Choose Us
+                </a>
+              </li>
+              <li>
+                <a href="#categories" className="hover:text-primary transition">
+                  Vehicles
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-primary transition">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* SUPPORT */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-white">Support</h3>
+            <ul className="space-y-3 text-gray-300">
+              {/* Added href to land on the FAQ section */}
+              <li>
+                <a href="#faq" className="hover:text-primary transition">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition">
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-primary transition">
+                  Help Center
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* SOCIAL */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-white">Follow Us</h3>
+            <div className="flex flex-wrap items-center gap-4">
+              {/* Added placeholder hrefs for social links */}
+              <IconButton
+                icon={<Facebook size={20} />}
+                href="https://www.facebook.com/fah20im04"
+              />
+              <IconButton
+                icon={<Instagram size={20} />}
+                href="https://www.instagram.com/fanion_04/"
+              />
+              <IconButton
+                icon={<Youtube size={20} />}
+                href="https://youtube.com/travelease"
+              />
+              <IconButton
+                icon={<X size={20} />}
+                href="https://x.com/travelease"
+              />
+              <IconButton
+                icon={<Linkedin size={20} />}
+                href="https://www.linkedin.com/in/fahim-ahmed-ayon/"
+              />
+              <IconButton
+                icon={<Github size={20} />}
+                href="https://github.com/fah20im04"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* COPYRIGHT */}
+        <div className="text-center border-t border-white/10 mt-12 pt-6 text-gray-400 text-sm">
+          © {new Date().getFullYear()} TravelEase — All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
