@@ -18,6 +18,7 @@ import axiosInstance from "../Api/axiosInstance";
 import DashboardLayout from "../Components/DasboardLayout/DashboardLayout";
 import DashboardHome from "../Components/DasboardLayout/DashboardHome";
 import Profile from "../Components/DasboardLayout/Profile";
+import AboutUs from "../Components/Pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/allVehicles",
         loader: async () => {
-          const res = await axiosPrivate.get("/allVehicles");
+          const res = await axiosInstance.get("/allVehicles");
           return res.data;
         },
         element: <AllVehicle />,
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/addVehicle",
         element: <AddVehicle />,
+      },
+      {
+        path: "aboutUs",
+        element: <AboutUs />,
       },
 
       {

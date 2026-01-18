@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axiosPrivate from "../../../Api/AxiosPrivate";
 import { useTheme } from "../../Theame/ThemeProvider";
 import LoadingSpinner from "../Loading/LoadingSpinner";
+import axiosInstance from "../../../Api/axiosInstance";
 
 const VehicleCard = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -16,7 +17,7 @@ const VehicleCard = () => {
       setError("");
       try {
         // If JWT required, use axiosPrivate
-        const res = await axiosPrivate.get("/vehicles");
+        const res = await axiosInstance.get("/vehicles");
         console.log("Fetched vehicles:", res.data);
 
         // Ensure it's an array
